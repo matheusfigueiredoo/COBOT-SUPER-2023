@@ -21,10 +21,10 @@ def compare_histograms(hist1, hist2):
 cap = cv2.VideoCapture(0)
 
 # Carregar a imagem de referência
-reference_image_red = cv2.imread('vermelho_foto.jpeg')
+reference_image_red = cv2.imread('visao/vermelho_foto.jpeg')
 reference_hist_red = calculate_histogram(reference_image_red)
 
-reference_image_black = cv2.imread('preto_foto.jpeg')
+reference_image_black = cv2.imread('visao/preto_foto.jpeg')
 reference_hist_black = calculate_histogram(reference_image_black)
 
 while True:

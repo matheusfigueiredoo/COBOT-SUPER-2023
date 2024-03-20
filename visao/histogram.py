@@ -47,7 +47,7 @@ while True:
         cv2.putText(frame, 'Histograms Match!', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         x = "0001" #Preta
         ativa_robo = True
-        break
+        
 
     # Mostrar o frame
     cv2.imshow('Real-time Histogram Comparison', frame)

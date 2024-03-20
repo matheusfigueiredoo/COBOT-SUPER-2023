@@ -2,8 +2,8 @@ import rtde_control
 
 rtde_c = rtde_control.RTDEControlInterface("10.224.2.69")
 
-velocity = 0.5
-acceleration = 0.5
+velocity = 1
+acceleration = 1
 blend_1 = 0.0
 blend_2 = 0.02
 blend_3 = 0.0

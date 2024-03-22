@@ -69,7 +69,7 @@ while True:
 
     
     # Mostrar o frame
-    cv2.imshow('Real-time Histogram Comparison', frame)
+    #cv2.imshow('Real-time Histogram Comparison', frame)
 
     # Sair do loop se 'q' for pressionado
     # if cv2.waitKey(1) & 0xFF == ord('q'):

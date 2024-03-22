@@ -27,10 +27,10 @@ def compare_histograms(hist1, hist2):
 cap = cv2.VideoCapture(0)
 
 # Carregar a imagem de referência
-reference_image_red = cv2.imread('vermelho_foto.jpeg')
+reference_image_red = cv2.imread('projetc/vermelho_foto.jpeg')
 reference_hist_red = calculate_histogram(reference_image_red)
 
-reference_image_black = cv2.imread('preto_foto.jpeg')
+reference_image_black = cv2.imread('projetc/preto_foto.jpeg')
 reference_hist_black = calculate_histogram(reference_image_black)
 
 
@@ -69,8 +69,8 @@ while True:
 
     
     # Mostrar o frame
-    #cv2.imshow('Real-time Histogram Comparison', frame)
+    cv2.imshow('Real-time Histogram Comparison', frame)
 
     # Sair do loop se 'q' for pressionado
-    # if cv2.waitKey(1) & 0xFF == ord('q'):
-    #     break
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+         break

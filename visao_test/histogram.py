@@ -21,10 +21,10 @@ def compare_histograms(hist1, hist2):
 cap = cv2.VideoCapture(0)
 
 # Carregar a imagem de referência
-reference_image_red = cv2.imread('vermelho_foto.jpeg')
+reference_image_red = cv2.imread('visao/vermelho_foto.jpeg')
 reference_hist_red = calculate_histogram(reference_image_red)
 
-reference_image_black = cv2.imread('preto_foto.jpeg')
+reference_image_black = cv2.imread('visao/preto_foto.jpeg')
 reference_hist_black = calculate_histogram(reference_image_black)
 
 while True:
@@ -46,6 +46,8 @@ while True:
     if compare_histograms(real_time_hist,reference_hist_black) >= 0.75:
         cv2.putText(frame, 'Histograms Match!', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         x = "0001" #Preta
+        ativa_robo = True
+        
 
     # Mostrar o frame
     cv2.imshow('Real-time Histogram Comparison', frame)

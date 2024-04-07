@@ -43,3 +43,23 @@ place_red = 0
 if place_red == 0:
     rtde_c.moveJ(red_1)
     place_red = place_red + 1
+
+if place_red == 1:
+    rtde_c.moveJ(red_2)
+    place_red = place_red + 1 
+
+if place_red == 2:
+    rtde_c.moveJ(red_3)
+    place_red = place_red + 1 
+
+if place_red == 3:
+    rtde_c.moveJ(red_4)
+    place_red = place_red + 1
+
+if place_red == 4:
+    rtde_c.moveJ(red_5)
+    place_red = place_red + 1
+
+if place_red == 5:
+    rtde_c.moveJ(red_6)
+    place_red = place_red + 1 

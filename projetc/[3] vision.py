@@ -5,8 +5,8 @@ import rtde_io
 import time
 
 # Inicializar interfaces RTDE
-rtde_io_ = rtde_io.RTDEIOInterface("10.224.1.153")
-rtde_c = rtde_control.RTDEControlInterface("10.224.1.153")
+rtde_io_ = rtde_io.RTDEIOInterface("10.224.1.60")
+rtde_c = rtde_control.RTDEControlInterface("10.224.1.60")
 
 # Função para calcular o histograma
 def calculate_histogram(image):

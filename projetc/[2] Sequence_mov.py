@@ -3,7 +3,8 @@ import rtde_io
 import time
 
 HOST = "123"
-place_red = 0
+memory_red = 0
+memory_black = 0
 
 rtde_io_ = rtde_io.RTDEIOInterface(HOST)
 rtde_c = rtde_control.RTDEControlInterface(HOST)
@@ -38,30 +39,55 @@ rtde_io_.setToolDigitalOut(0, True)
 # das pecas
 
 # pecas vermelhas
-# place red eh a variavel que conta as pecas armazenadas
+# memory red eh a variavel que conta as pecas armazenadas
 
 
-if place_red == 0:
+if memory_red == 0:
     rtde_c.moveJ(red_1)
     
 
-if place_red == 1:
+if memory_red == 1:
     rtde_c.moveJ(red_2)
     
 
-if place_red == 2:
+if memory_red == 2:
     rtde_c.moveJ(red_3)
     
 
-if place_red == 3:
+if memory_red == 3:
     rtde_c.moveJ(red_4)
     
 
-if place_red == 4:
+if memory_red == 4:
     rtde_c.moveJ(red_5)
     
 
-if place_red == 5:
+if memory_red == 5:
     rtde_c.moveJ(red_6)
     
-place_red = place_red + 1
+memory_red = memory_red + 1
+
+if memory_black == 0:
+    rtde_c.moveJ(black_1)
+    
+
+if memory_black == 1:
+    rtde_c.moveJ(black_2)
+    
+
+if memory_black == 2:
+    rtde_c.moveJ(black_3)
+    
+
+if memory_black == 3:
+    rtde_c.moveJ(black_4)
+    
+
+if memory_black == 4:
+    rtde_c.moveJ(black_5)
+    
+
+if memory_black == 5:
+    rtde_c.moveJ(black_6)
+    
+memory_black = memory_black + 1

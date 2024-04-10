@@ -1,7 +1,7 @@
 import rtde_control
 import time
 
-rtde_c = rtde_control.RTDEControlInterface("10.224.2.69")
+rtde_c = rtde_control.RTDEControlInterface("10.224.2.60")
 
 home = [-8.408223287403871e-06, -1.5707289909153879, -5.28501404915005e-05, -1.5707760683947818, -9.838734762013246e-06, -5.547200338185121e-06]
 

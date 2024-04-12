@@ -10,8 +10,15 @@ rtde_io_ = rtde_io.RTDEIOInterface(HOST)
 rtde_c = rtde_control.RTDEControlInterface(HOST)
 
 # positions
-pos_initial = [-4.036092583333151, -1.3568094980767746, 2.373448912297384, -2.5869633160033167, -1.568237606679098, -2.1496198813067835]
+pos_pick = [-4.036092583333151, -1.3568094980767746, 2.373448912297384, -2.5869633160033167, -1.568237606679098, -2.1496198813067835]
+pos_base = []
 
+ref_red_1 = []
+ref_red_2 = []
+ref_red_3 = []
+ref_red_4 = []
+ref_red_5 = []
+ref_red_6 = []
 red_1 = []
 red_2 = []
 red_3 = []
@@ -19,6 +26,12 @@ red_4 = []
 red_5 = []
 red_6 = []
 
+ref_black_1 = []
+ref_black_2 = []
+ref_black_3 = []
+ref_black_4 = []
+ref_black_5 = []
+ref_black_6 = []
 black_1 = []
 black_2 = []
 black_3 = []
@@ -28,7 +41,6 @@ black_6 = []
 
 
 # moviments sequency
-rtde_c.moveJ(pos_initial)
 time.sleep(1)
 
 # manter a garra na posicao inicial

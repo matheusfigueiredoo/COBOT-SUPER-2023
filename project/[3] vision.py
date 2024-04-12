@@ -1,12 +1,8 @@
 import cv2
 import numpy as np
-import rtde_control
-import rtde_io
 import time
 
-# Inicializar interfaces RTDE
-rtde_io_ = rtde_io.RTDEIOInterface("10.224.2.60")
-rtde_c = rtde_control.RTDEControlInterface("10.224.2.60")
+
 
 # Função para calcular o histograma
 def calculate_histogram(image):
@@ -41,12 +37,6 @@ def calculate_histogram1(image):
 def move_to_position(position):
     global em_execucao
     em_execucao = True
-
-    base = [-4.036092583333151, -1.3568094980767746, 2.373448912297384, -2.5869633160033167, -1.568237606679098, -2.1496198813067835]
-    rtde_c.moveJ(position)
-    rtde_c.moveJ(base)
-    rtde_c.moveJ(position)
-    rtde_c.moveJ(base)
 
     time.sleep(1)
 

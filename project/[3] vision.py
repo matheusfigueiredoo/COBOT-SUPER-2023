@@ -54,7 +54,7 @@ def main():
     cap = cv2.VideoCapture(0)
 
     # Carregar imagens de referência e calcular histogramas
-    reference_image_red = cv2.imread('foto_webcam_red.png')
+    reference_image_red = cv2.imread('foto_webcam_red.jpg')
     reference_hist_red = calculate_histogram1(reference_image_red)
 
     reference_image_black = cv2.imread('foto_webcam_black.jpg')

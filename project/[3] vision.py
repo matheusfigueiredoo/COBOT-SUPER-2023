@@ -54,10 +54,10 @@ def main():
     cap = cv2.VideoCapture(0)
 
     # Carregar imagens de referência e calcular histogramas
-    reference_image_red = cv2.imread('foto_webcam_red.png')
+    reference_image_red = cv2.imread(r'C:\Users\super\Documents\GitHub\COBOT_2023-24\project\foto_webcam_red.png')
     reference_hist_red = calculate_histogram1(reference_image_red)
 
-    reference_image_black = cv2.imread('foto_webcam_black.png')
+    reference_image_black = cv2.imread(r'foto_webcam_black.png')
     reference_hist_black = calculate_histogram1(reference_image_black)
 
     while True:

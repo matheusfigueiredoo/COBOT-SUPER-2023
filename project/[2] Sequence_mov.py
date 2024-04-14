@@ -11,7 +11,8 @@ rtde_c = rtde_control.RTDEControlInterface(HOST)
 
 # positions
 pos_pick = [-4.036092583333151, -1.3568094980767746, 2.373448912297384, -2.5869633160033167, -1.568237606679098, -2.1496198813067835]
-pos_base = []
+pos_ref_pick = []
+pos_ref_base = []
 
 ref_red_1 = []
 ref_red_2 = []
@@ -55,8 +56,22 @@ rtde_io_.setToolDigitalOut(0, True)
 
 
 if memory_red == 0:
+    rtde_c.moveJ(pos_ref_pick)
+    rtde_c.moveJ(pos_pick)
+    time.sleep(1)
+    rtde_io_.setToolDigitalOut(1, True)
+    time.sleep(1)
+    rtde_c.moveJ(pos_ref_pick)
+    rtde_c.moveJ(pos_ref_base)
+    rtde_c.moveJ(ref_red_1)
     rtde_c.moveJ(red_1)
-    
+    time.sleep(1)
+    rtde_io_.setToolDigitalOut(1, False)
+    rtde_io_.setToolDigitalOut(0, True)
+    time.sleep(1)
+    rtde_c.moveJ(ref_red_1)
+    rtde_c.moveJ(pos_ref_base)
+    rtde_c.moveJ(pos_ref_pick)
 
 if memory_red == 1:
     rtde_c.moveJ(red_2)

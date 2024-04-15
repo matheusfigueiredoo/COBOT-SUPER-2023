@@ -43,7 +43,7 @@ rtde_c.moveJ(ref_red_1)
 rtde_c.moveJ(pos_ref_pick)
 
 
-
+rtde_io_.setToolDigitalOut(0, False)
 rtde_c.moveJ(pos_pick)
 time.sleep(0.5)
 rtde_io_.setToolDigitalOut(1, True)
@@ -58,6 +58,7 @@ time.sleep(0.5)
 rtde_c.moveJ(ref_red_2)
 rtde_c.moveJ(pos_ref_pick)
 
+rtde_io_.setToolDigitalOut(0, False)
 rtde_c.moveJ(pos_ref_pick)
 rtde_c.moveJ(pos_pick)
 time.sleep(0.5)

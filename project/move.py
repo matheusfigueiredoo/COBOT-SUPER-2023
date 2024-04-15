@@ -2,9 +2,7 @@ import rtde_control
 import rtde_io
 import time
 
-HOST = "123"
-memory_red = 0
-memory_black = 0
+HOST = "10.224.2.60"
 
 rtde_io_ = rtde_io.RTDEIOInterface(HOST)
 rtde_c = rtde_control.RTDEControlInterface(HOST)

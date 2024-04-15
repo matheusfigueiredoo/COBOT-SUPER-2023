@@ -72,7 +72,7 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
 
-    if memory_red == 1:
+    elif memory_red == 1:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -91,7 +91,7 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
 
-    if memory_red == 2:
+    elif memory_red == 2:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -110,7 +110,7 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
 
-    if memory_red == 3:
+    elif memory_red == 3:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -129,7 +129,7 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
         
-    if memory_red == 4:
+    elif memory_red == 4:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -148,7 +148,7 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
         
-    if memory_red == 5:
+    elif memory_red == 5:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -167,10 +167,9 @@ def red_piece(memory_red):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
     
-    if memory_red == 6:
-        memory_red = 0
-    
-    return memory_red
+    else:
+        return "Todas as posições estão preenchidas"
+
 
 # pecas pretas
 # memory black eh a variavel que conta as pecas armazenadas
@@ -195,7 +194,7 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)   
 
-    if memory_black == 1:
+    elif memory_black == 1:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -214,7 +213,7 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)  
 
-    if memory_black == 2:
+    elif memory_black == 2:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -233,7 +232,7 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
         
-    if memory_black == 3:
+    elif memory_black == 3:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -252,7 +251,7 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
         
-    if memory_black == 4:
+    elif memory_black == 4:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -271,7 +270,7 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
         
-    if memory_black == 5:
+    elif memory_black == 5:
         rtde_c.moveJ(pos_ref_pick)
         rtde_c.moveJ(pos_pick)
         time.sleep(1)
@@ -290,7 +289,5 @@ def black_piece(memory_black):
         rtde_c.moveJ(pos_ref_pick)
         rtde_io_.setToolDigitalOut(0, False)
 
-    if memory_black == 6:
-        memory_black = 0
-    
-    return memory_black
+    else:
+        return "Todas as posições estão preenchidas"

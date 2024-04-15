@@ -12,8 +12,6 @@ import numpy as np
 
 # exemplo: se a memória estiver com valor 0, o robô coloca na posição 1 e incrementa a variável.
 # se estiver com valor 1, o robô coloca na posição 2 e incrementa.
-memory_red = 0
-memory_black = 0
 
 # VISAO COMPUTACIONAL
 # Função para calcular o histograma
@@ -45,20 +43,6 @@ def calculate_histogram1(image):
     
     return histogram
 
-# # Função para mover para uma posição específica
-# def move_to_position(position):
-#     global em_execucao
-#     em_execucao = True
-
-#     base = [-4.036092583333151, -1.3568094980767746, 2.373448912297384, -2.5869633160033167, -1.568237606679098, -2.1496198813067835]
-#     rtde_c.moveJ(position)
-#     rtde_c.moveJ(base)
-
-
-#     time.sleep(1)
-
-#     em_execucao = False
-
 # Função para comparar histogramas
 def compare_histograms(hist1, hist2):
     # Calcular a correlação entre os dois histogramas
@@ -86,6 +70,10 @@ def main():
     reference_hist_black = calculate_histogram(reference_image_black)
 
     while True:
+
+        memory_red = 0
+        memory_black = 0
+        
         # Capturar frame a frame
         ret, frame = cap.read()
 
@@ -112,8 +100,8 @@ def main():
             if memory_black == 6:
                 memory_black = 0
 
-        #print(f'Comparação vermelho: {compare_histograms(real_time_hist, reference_hist_red)}')
-        #print(f'Comparação preto: {compare_histograms(real_time_hist, reference_hist_black)}')
+        print(f'Comparação vermelho: {compare_histograms(real_time_hist, reference_hist_red)}')
+        print(f'Comparação preto: {compare_histograms(real_time_hist, reference_hist_black)}')
 
         # Exibir o frame
         cv2.imshow('Real-time Histogram Comparison', cropped_frame)
@@ -126,5 +114,5 @@ def main():
     cap.release()
     cv2.destroyAllWindows()
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     main()

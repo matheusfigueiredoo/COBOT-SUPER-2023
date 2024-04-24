@@ -1,17 +1,8 @@
-# Codigo principal
-# COBOT 2023-24
-
-import move
 import cv2
 import numpy as np
+import time
+import teste_move 
 
-# as variáveis memory red/black são utilizadas para indicar que a posição 
-# está ocupada.
-# elas são incrementadas assim que o robô coloca a peça na posição.
-# exemplo: se a memória estiver com valor 0, o robô coloca na posição 1 e incrementa a variável.
-# se estiver com valor 1, o robô coloca na posição 2 e incrementa.
-
-# VISAO COMPUTACIONAL
 # Função para calcular o histograma
 def calculate_histogram(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -19,6 +10,7 @@ def calculate_histogram(image):
     hist /= hist.sum()
     return hist
 
+# Função alternativa para calcular histograma
 def calculate_histogram1(image):
     # Converte a imagem para grayscale para criar a máscara
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -41,6 +33,7 @@ def calculate_histogram1(image):
     
     return histogram
 
+
 # Função para comparar histogramas
 def compare_histograms(hist1, hist2):
     # Calcular a correlação entre os dois histogramas
@@ -53,7 +46,7 @@ def crop_image(frame, x, y, width, height):
     return cropped_frame
 
 # Dimensões da região a ser recortada (crop)
-x, y, width, height = 100, 100, 200, 200  # Exemplo: região central da imagem
+x, y, width, height = 100, 100, 150, 150  # Exemplo: região central da imagem
 
 # Função principal
 def main():
@@ -67,11 +60,10 @@ def main():
     reference_image_black = cv2.imread('foto_webcam_black.jpg')
     reference_hist_black = calculate_histogram(reference_image_black)
 
-    while True:
+    memory_red = 0
+    memory_black = 0
 
-        memory_red = 0
-        memory_black = 0
-        
+    while True:
         # Capturar frame a frame
         ret, frame = cap.read()
 
@@ -82,24 +74,19 @@ def main():
         real_time_hist = calculate_histogram(cropped_frame)
 
         # Comparar histogramas
-        if compare_histograms(real_time_hist, reference_hist_red) >= 0.73:
-            print('vermelho')
-            cv2.putText(frame, 'Histograms Match!', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)  # vermelho
-            move.red_piece(memory_red)
-            memory_red = memory_red + 1
-            if memory_black == 6:
-                memory_black = 0
 
-        elif compare_histograms(real_time_hist, reference_hist_black) >= 0.8:
+        if compare_histograms(real_time_hist, reference_hist_red) >= 0.88:
+            print('vermelha')
+            teste_move.move_red_piece(memory_red)
+            memory_red += 1
+            
+
+        elif compare_histograms(real_time_hist, reference_hist_black) >= 0.85:
             print('preta')
-            cv2.putText(frame, 'Histograms Match!', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2) # preto
-            move.red_piece(memory_black)
-            memory_black = memory_black + 1
-            if memory_black == 6:
-                memory_black = 0
-
-        print(f'Comparação vermelho: {compare_histograms(real_time_hist, reference_hist_red)}')
-        print(f'Comparação preto: {compare_histograms(real_time_hist, reference_hist_black)}')
+            teste_move.move_black_piece(memory_black)
+            memory_black += 1
+        #print(f'Comparação vermelho: {compare_histograms(real_time_hist, reference_hist_red)}')
+        #print(f'Comparação preto: {compare_histograms(real_time_hist, reference_hist_black)}')
 
         # Exibir o frame
         cv2.imshow('Real-time Histogram Comparison', cropped_frame)
@@ -112,5 +99,5 @@ def main():
     cap.release()
     cv2.destroyAllWindows()
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()

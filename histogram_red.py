@@ -15,7 +15,7 @@ def plot_histogram(image):
 
 def main():
     # Carrega a imagem
-    image = cv2.imread('foto_webcam_red.jpg')
+    image = cv2.imread('project/foto_webcam_red.jpg')
 
     # Converte a imagem para escala de cinza
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

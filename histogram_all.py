@@ -7,12 +7,10 @@ def plot_histogram(image, color):
     plt.plot(histogram, color=color)
 
 def main():
-    # Carrega as três imagens
     image1 = cv2.imread('project/foto_webcam_black.jpg', cv2.IMREAD_GRAYSCALE)
     image2 = cv2.imread('project/foto_webcam_red.jpg', cv2.IMREAD_GRAYSCALE)
     image3 = cv2.imread('project/foto_webcam_nothing.jpg', cv2.IMREAD_GRAYSCALE)
 
-    # Plota os histogramas das três imagens em uma única figura
     plt.figure(figsize=(10, 5))
     plot_histogram(image1, 'blue')
     plot_histogram(image2, 'green')
